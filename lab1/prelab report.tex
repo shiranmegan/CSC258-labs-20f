@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{enumitem}
+
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\renewcommand{\baselinestretch}{1.5}
+\title{Lab 1 Building Circuits using Logism Evolution}
+\author{Shi Ran 1004793495}
+
+
+\begin{document}
+	\maketitle
+	\newpage
+	\section*{Part I}\noindent
+	1. Below is the gate diagram for $f=xs'+ys$\\
+	\includegraphics{part1 1.png}\\
+	2. The truth table for the function: \\\\\hspace*{100pt}
+	\begin{tabular}{|p{4em}|p{4em}|p{4em}|p{4em}|}\hline
+		y & s & x & f \\\hline
+		0 & 0 & 0 & 0 \\\hline
+		0 & 0 & 1 & 1 \\\hline
+		0 & 1 & 0 & 0 \\\hline
+		1 & 0 & 0 & 0 \\\hline
+		0 & 1 & 1 & 0 \\\hline
+		1 & 0 & 1 & 1 \\\hline
+		1 & 1 & 0 & 1 \\\hline
+		1 & 1 & 1 & 1 \\\hline
+	\end{tabular}
+	\newpage
+	
+	\section*{Part II}\noindent
+	1. Below is the gate diagram for $f=(a+b)'+cb'$\\\includegraphics{part2 1.png}\\
+	2. The truth table for the function: \\\\\hspace*{100pt}
+	\begin{tabular}{|p{4em}|p{4em}|p{4em}|p{4em}|}\hline
+		a & b & c & f \\\hline
+		0 & 0 & 0 & 1 \\\hline
+		0 & 0 & 1 & 1 \\\hline
+		0 & 1 & 0 & 0 \\\hline
+		1 & 0 & 0 & 0 \\\hline
+		0 & 1 & 1 & 0 \\\hline
+		1 & 0 & 1 & 1 \\\hline
+		1 & 1 & 0 & 0 \\\hline
+		1 & 1 & 1 & 0 \\\hline
+	\end{tabular}\\\\
+	3. The diagram in section 1 can be simplified. Perform the following calculation:\\
+	\begin{align*}
+		f&=(a+b)'+cb'\\
+		&=(a'b')+cb'\\
+		&=(a'b'+c)(a'b'+b')\tag{by distributive law}\\
+		&=(a'b'+c)b'\tag{since b' being true is equvalent to a'b'+b' being true}\\
+		&=(a'+c)b'\tag{since b' is satisfied by the second part, it can be removed}
+	\end{align*}
+	Re-draw the diagram:\\
+	\\\includegraphics{part2 3.png}\\
+	Note there are five gates in the diagram in section 1, but there are only four gates in this diagram, so this is a cheaper implementation of the design.
+	
+	
+\end{document}
